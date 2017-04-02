@@ -1,7 +1,7 @@
 $folderDateTime = (get-date).ToString('d-M-y HHmmss')
 $userDir = (Get-ChildItem env:\userprofile).value + '\kk-9 Report ' + $folderDateTime
 $fileSaveDir = New-Item  ($userDir) -ItemType Directory 
-$date = get-date 
+$date = get-clipboard 
 $Report = ConvertTo-Html -Title 'Recon Report' -Head $style > $fileSaveDir'/ComputerInfo.html' 
 $Report = $Report + "<div id=body><h1>KK-9 Report</h1><hr size=2><br><h3> Generated on: $Date </h3><br>" 
 $N1NJA = Get-Clipboard
